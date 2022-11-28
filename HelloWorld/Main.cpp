@@ -20,5 +20,7 @@ int main()
 
 	Fibonacci();
 
-	std::cin.get();
+	//std::cin.get();
+
+	std::cout << "Factorial(6) = " << Factorial(7) << std::endl;
 }
