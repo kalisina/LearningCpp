@@ -1,10 +1,12 @@
 #include <iostream>
 #include "Log.h"
 #include "Math.h"
+#include "Pointers.h"
 
 int main()
 {
-	//std::cout << "Hello World" << std::endl;
+	
+	std::cout << "Hello World" << std::endl;
 	Log("Hello World 2");
 	int res = Multiply(5, 8);
 	std::cout << res << std::endl;
@@ -12,15 +14,17 @@ int main()
 	float f = 5.0;
 
 	int s = sizeof(char);
-	std::cout << "sizeof float = " << s << std::endl;
+	std::cout << "sizeof char = " << s << std::endl;
 
 	MultiplyAndLog(3, 9);
 	MultiplyAndLog(12, 15);
 	MultiplyAndLog(8, 6);
 
-	Fibonacci();
+	//Fibonacci();
 
-	//std::cin.get();
+	//std::cout << "Factorial(5) = " << Factorial(5) << std::endl;
 
-	std::cout << "Factorial(6) = " << Factorial(7) << std::endl;
+	testingPointers();
+
+	std::cin.get();
 }
