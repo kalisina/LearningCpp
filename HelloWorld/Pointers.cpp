@@ -19,3 +19,30 @@ void testingPointers() {
 
 	delete[] buffer;
 }
+
+void testingPointers2() {
+	std::cout << "Testing pointers 2! " << std::endl;
+
+	void* ptr = nullptr;
+
+	int x = 3;
+	std::cout << "x = " << x << std::endl;
+	std::cout << "&x = " << &x << std::endl;
+
+	int* y = &x; // y is a pointer containing the address of x
+	std::cout << "y = " << y << std::endl; // should be an address
+	std::cout << "&y = " << &y << std::endl; // should be another address
+	std::cout << "*y = " << *y << std::endl; // should be the value of x
+
+	int** z = &y;
+	std::cout << "z = " << z << std::endl; // doublePointer
+
+	**z = 4;
+
+	char* buffer = new char[8]; // pointer to the beginning of that data (will hold address of the first element)
+	memset(buffer, 0, 8);
+
+	char** ptrBuffer = &buffer;
+
+	delete[] buffer; // must delete the buffer to avoid memory leaks
+}
