@@ -25,7 +25,8 @@ int main()
 	//std::cout << "Factorial(5) = " << Factorial(5) << std::endl;
 
 	//testingPointers();
-	testingPointers2();
+	//testingPointers2();
 
+	testingReferences();
 	std::cin.get();
 }

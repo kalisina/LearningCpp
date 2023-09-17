@@ -46,3 +46,40 @@ void testingPointers2() {
 
 	delete[] buffer; // must delete the buffer to avoid memory leaks
 }
+
+void incrementUsingReference(int& value) {
+	std::cout << "increment(" << value << ")" << std::endl;
+	value++;
+}
+
+void incrementUsingPointer(int* value) {
+	(*value)++; // the parenthesis are need to get the value first, otherwise, it will increase the address first
+}
+
+void testingReferences() {
+	int a = 5;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "&a = " << &a << std::endl;
+
+	int& ref = a; // reference is an alias (it doesn't count as a variable)
+	std::cout << "ref = " << ref << std::endl;
+	std::cout << "&ref = " << &ref << std::endl;
+
+	ref = 2;
+	std::cout << "a = " << a << std::endl;
+
+	incrementUsingReference(ref);
+	std::cout << "a after increment = " << a << std::endl;
+
+	int b = 8;
+	incrementUsingPointer(&b);
+	std::cout << "b after increment = " << b << std::endl;
+
+	//ref = b; // this won't work as it's not allowed, we need to use pointer intead
+
+	int* ptr = &a;
+	ptr = &b;
+	*ptr = 10;
+	std::cout << "b = " << b << std::endl;
+}
+
