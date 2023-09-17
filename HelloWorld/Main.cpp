@@ -2,10 +2,10 @@
 #include "Log.h"
 #include "Math.h"
 #include "Pointers.h"
+#include "Logger.h"
 
 int main()
 {
-	
 	std::cout << "Hello World" << std::endl;
 	Log("Hello World 2");
 	int res = Multiply(5, 8);
@@ -27,6 +27,12 @@ int main()
 	//testingPointers();
 	//testingPointers2();
 
-	testingReferences();
+	//testingReferences();
+
+	Logger log; 
+	log.SetLevel(log.LogLevelInfo);
+	log.Warn("Hello!");
+	log.Error("Hello?");
+	log.Info("Hello");
 	std::cin.get();
 }
